@@ -78,7 +78,7 @@ html {
   box-sizing: inherit; }
 
 body {
-  background: #ffffff; }
+  background: #212222; }
   body.is-preload *, body.is-preload *:before, body.is-preload *:after, body.is-resizing *, body.is-resizing *:before, body.is-resizing *:after {
     -moz-animation: none !important;
     -webkit-animation: none !important;
@@ -91,7 +91,7 @@ body {
 
 /* Type */
 body, input, select, textarea {
-  color: #7f888f;
+  color: #bcc5cb;
   font-family: "Open Sans", sans-serif;
   font-size: 13pt;
   font-weight: 400;
@@ -121,7 +121,7 @@ a {
       color: inherit; }
 
 strong, b {
-  color: #3d4449;
+  color: #b5b5b5;
   font-weight: 600; }
 
 em, i {
@@ -131,7 +131,7 @@ p {
   margin: 0 0 2em 0; }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #3d4449;
+  color: #ffffff;
   font-family: "Roboto Slab", serif;
   font-weight: 700;
   line-height: 1.5;
@@ -1021,7 +1021,6 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="tel"],
-input[type="search"],
 input[type="url"],
 select,
 textarea {
@@ -1043,7 +1042,6 @@ textarea {
   input[type="password"]:invalid,
   input[type="email"]:invalid,
   input[type="tel"]:invalid,
-  input[type="search"]:invalid,
   input[type="url"]:invalid,
   select:invalid,
   textarea:invalid {
@@ -1052,7 +1050,6 @@ textarea {
   input[type="password"]:focus,
   input[type="email"]:focus,
   input[type="tel"]:focus,
-  input[type="search"]:focus,
   input[type="url"]:focus,
   select:focus,
   textarea:focus {
@@ -1068,7 +1065,7 @@ select {
   padding-right: 2.75em;
   text-overflow: ellipsis; }
   select option {
-    color: #3d4449;
+    color: #c4c6c7;
     background: #ffffff; }
   select:focus::-ms-value {
     background-color: transparent; }
@@ -1079,7 +1076,6 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="tel"],
-input[type="search"],
 input[type="url"],
 select {
   height: 2.75em; }
@@ -1102,7 +1098,7 @@ input[type="radio"] {
   input[type="checkbox"] + label,
   input[type="radio"] + label {
     text-decoration: none;
-    color: #7f888f;
+    color: #cfd1d3;
     cursor: pointer;
     display: inline-block;
     font-size: 1em;
@@ -1300,6 +1296,7 @@ ul.actions {
   list-style: none;
   margin-left: -1em;
   padding-left: 0; }
+
   ul.actions li {
     padding: 0 0 0 1em;
     vertical-align: middle; }
@@ -1454,7 +1451,7 @@ table {
   table td {
     padding: 0.75em 0.75em; }
   table th {
-    color: #3d4449;
+    color: #a4a9ac;
     font-size: 0.9em;
     font-weight: 600;
     padding: 0 0.75em 0.75em 0.75em;
@@ -1746,7 +1743,9 @@ button,
     flex-shrink: 1;
     margin: 0 0 6em 6em;
     position: relative;
-    width: calc(33.33333% - 6em); }
+    width: calc(33.33333% - 6em); 
+    max-width: 600px; /* Adjust max-width as needed */
+    text-align: center; /* Center-align text and buttons */}
     .posts article:before {
       background: rgba(210, 215, 217, 0.75);
       content: '';
@@ -1843,6 +1842,14 @@ button,
   flex-direction: row-reverse;
   min-height: 100vh; }
 
+.wrappercent {
+    text-align: center;
+}
+
+.wrappercent div{
+  margin-bottom: 10px;
+}
+
 /* Main */
 #main {
   -moz-flex-grow: 1;
@@ -1880,40 +1887,6 @@ button,
         padding: 3em 0 1em 0 ; } }
 
 /* Sidebar */
-#search form {
-  text-decoration: none;
-  position: relative; }
-  #search form:before {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    line-height: 1;
-    text-transform: none !important;
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900; }
-  #search form:before {
-    -moz-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    -ms-transform: scaleX(-1);
-    transform: scaleX(-1);
-    color: #7f888f;
-    content: '\f002';
-    cursor: default;
-    display: block;
-    font-size: 1.5em;
-    height: 2em;
-    line-height: 2em;
-    opacity: 0.325;
-    position: absolute;
-    right: 0;
-    text-align: center;
-    top: 0;
-    width: 2em; }
-  #search form input[type="text"] {
-    padding-right: 2.75em; }
 
 #sidebar {
   -moz-flex-grow: 0;
@@ -1928,7 +1901,7 @@ button,
   -webkit-transition: margin-left 0.5s ease, box-shadow 0.5s ease;
   -ms-transition: margin-left 0.5s ease, box-shadow 0.5s ease;
   transition: margin-left 0.5s ease, box-shadow 0.5s ease;
-  background-color: #f5f6f7;
+  background-color: #3b3d3d;
   font-size: 0.9em;
   position: relative;
   width: 26em; }
@@ -2198,7 +2171,7 @@ button,
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #3d4449;
+  color: #f2f3f4;
   font-family: "Roboto Slab", serif;
   font-weight: 400;
   letter-spacing: 0.075em;
