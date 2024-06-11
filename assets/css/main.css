@@ -1846,8 +1846,53 @@ button,
     text-align: center;
 }
 
+.wrappercentmid {
+  text-align: center;
+  margin: 0 auto; /* Center horizontally */
+  max-width: 85%; /* Limit width to 50% of the screen */
+}
+
 .wrappercent div{
   margin-bottom: 10px;
+}
+
+.pink-border {
+  border: 10px solid #f56a6a; /* Pink color */
+  padding: 5px; /* Add padding to adjust the spacing */
+}
+
+/* Slides */
+
+.carousel {
+  width: 100%;
+  overflow: visible;
+  position: relative;
+}
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+.carousel-item {
+  flex: 0 0 100%;
+  margin-right: 10px; /* Adjust spacing between items */
+}
+.carousel-btn {
+  position: absolute;
+  top: 20%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 24px; /* Adjust arrow size */
+  color: #f56a6a; /* Pink color */
+  z-index: 1; /* Ensure arrows appear above images */
+  background-color: transparent; /* Ensure arrows are clickable */
+  border: none; /* Remove arrow border */
+  outline: none; /* Remove arrow outline */
+}
+.carousel-btn-left {
+  left: 0; /* Adjust distance from the left */
+}
+.carousel-btn-right {
+  right: 0; /* Adjust distance from the right */
 }
 
 /* Main */

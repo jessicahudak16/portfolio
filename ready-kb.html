@@ -66,45 +66,89 @@
 
 									<h2>My Contributions</h2>
 									<p>Examples of areas that I worked on include the following:</p>
-									<table>
-										<thead>
-										  <tr>
-											<th>Section</th>
-											<th>Example</th>
-											<th>Description</th>
-											<th>Picture</th>
-										  </tr>
-										</thead>
-										<tbody>
-										  <tr>
-											<td>ForgeOS Manual</td>
-											<td><a href="https://support.ready-robotics.com/guides/Platform/Taskbar/" target="_blank">Link</a></td>
-											<td>I used Adobe Illustrator to add callouts. In a table, I wrote a description for each called-out feature.</td>
-											<td style="vertical-align: middle;"><img src="images/Site-KB-Manual-Taskbar.png" width="300" /></td>
-										</tr>
-										  <tr>
-											<td>Setup Guides</td>
-											<td><a href="https://support.ready-robotics.com/setup/abb/abb-irc5-program/" target="_blank">Link</a></td>
-											<td>Using a free <a href="https://docusaurus.io/community/resources" target="_blank">Docusaurus plug-in</a>, I wrote a script so that when I typed “npm run generate all” into a terminal, the HTML of all setup guides automatically converted into PDFs, overwriting existing PDFs. Then, with a mere click of a button, I could commit all these new PDFs to GitHub. On the site, at the bottom of each setup guide, the most recently generated PDF could be downloaded from GitHub via a “Download PDF” button.</td>
-											<td style="vertical-align: middle;"><img src="images/Site-KB-Setup-ABB-Download.png" width="300" /></td>
-										</tr>
-										  <tr>
-											<td>Troubleshooting Guides</td>
-											<td><a href="https://support.ready-robotics.com/troubleshooting/fanuc/HowToRestartForgePrograms/" target="_blank">Link</a></td>
-											<td>When a customer needed to restart ForgeOS programs but didn’t want to reboot the whole system, I worked with an engineer to test a workaround, which I then documented.</td>
-											<td style="vertical-align: middle;"><img src="images/Site-KB-Troubleshooting-FANUC-RestartPrograms.png" width="300" /></td>
-										</tr>
-										  <tr>
-											<td>Release Notes</td>
-											<td><a href="https://support.ready-robotics.com/update/release-notes/5-3-0/" target="_blank">Link</a></td>
-											<td>I organized Release Notes by category and type (new features = green, updates = blue, and fixes = yellow). Whenever someone requested a change in the colors, I only had to change the color key in one file for the change to populate in all Release Notes tables.</td>
-											<td style="vertical-align: middle;"><img src="images/Site-KB-ReleaseNotes-5-3-0.png" width="300" /></td>
-										</tr>
-										</tbody>
-									  </table>
+									
+									  <!DOCTYPE html>
+									  <html lang="en">
+									  <head>
+									  <meta charset="UTF-8">
+									  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+									  <title>Image Carousel</title>
+									  </head>
+									  <body>
 									  
+									  <div class="carousel">
+										<div class="carousel-inner">
+										  <div class="carousel-item">
+											<div class="wrappercentmid">
+												<img class="pink-border" src="images/Site-KB-Manual-Taskbar.png" width="65%" />
+												<p></p>
+												<h3>ForgeOS Manual</h3>
+												<p><a href="https://support.ready-robotics.com/guides/Platform/Taskbar/" target="_blank">Example</a></p>
+												<p>I used Adobe Illustrator to add callouts. In a table, I wrote a description for each called-out feature.</p>
+											  </div>
+										  </div>
+										  <div class="carousel-item">
+											<div class="wrappercentmid">
+												<img class="pink-border" src="images/Site-KB-Setup-ABB-Download.png" width="65%" />
+												<p></p>
+												<h3>Setup Guides</h3>
+												<p><a href="https://support.ready-robotics.com/setup/abb/abb-irc5-program/" target="_blank">Example</a></p>
+												<p>Using a free <a href="https://docusaurus.io/community/resources" target="_blank">Docusaurus plug-in</a>, I wrote a script so that when I typed “npm run generate all” into a terminal, the HTML of all setup guides automatically converted into PDFs, overwriting existing PDFs. Then, with a mere click of a button, I could commit all these new PDFs to GitHub. On the site, at the bottom of each setup guide, the most recently generated PDF could be downloaded from GitHub via a “Download PDF” button.</p>
+											  </div>
+										  </div>
+										  <div class="carousel-item">
+											<div class="wrappercentmid">
+												<img class="pink-border" src="images/Site-KB-Troubleshooting-FANUC-RestartPrograms.png" width="65%" />
+												<p></p>
+												<h3>Troubleshooting Guides</h3>
+												<p><a href="https://support.ready-robotics.com/troubleshooting/fanuc/HowToRestartForgePrograms/" target="_blank">Example</a></p>
+												<p>When a customer needed to restart ForgeOS programs but didn’t want to reboot the whole system, I worked with an engineer to test a workaround, which I then documented.</p>
+											  </div>
+										  </div>
+										  <div class="carousel-item">
+											<div class="wrappercentmid">
+												<img class="pink-border" src="images/Site-KB-ReleaseNotes-5-3-0.png" width="65%" />
+												<p></p>
+												<h3>Release Notes</h3>
+												<p><a href="https://support.ready-robotics.com/update/release-notes/5-3-0/" target="_blank">Example</a></p>
+												<p>I organized Release Notes by category and type (new features = green, updates = blue, and fixes = yellow). Whenever someone requested a change in the colors, I only had to change the color key in one file for the change to populate in all Release Notes tables.</p>
+											  </div>
+										  </div>
+										</div>
+										<button class="carousel-btn carousel-btn-left" onclick="prevSlide()">&#10094;</button>
+										<button class="carousel-btn carousel-btn-right" onclick="nextSlide()">&#10095;</button>
+									  </div>
 									  
-					
+									  <script>
+										let slideIndex = 0;
+									
+										function showSlides() {
+											const slides = document.querySelectorAll('.carousel-item');
+											if (slideIndex < 0) {
+												slideIndex = slides.length - 1; // Wrap around to the last slide
+											}
+											if (slideIndex >= slides.length) {
+												slideIndex = 0; // Wrap around to the first slide
+											}
+											document.querySelector('.carousel-inner').style.transform = `translateX(${-slideIndex * 100}%)`;
+										}
+									
+										function nextSlide() {
+											slideIndex++;
+											showSlides();
+										}
+									
+										function prevSlide() {
+											slideIndex--;
+											showSlides();
+										}
+									
+										showSlides();
+									</script>		
+									  
+									  </body>
+									  </html>							  
+
 								</section>
 
 						</div>
