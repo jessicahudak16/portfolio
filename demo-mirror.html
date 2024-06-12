@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>FEM</title>
+		<title>Mirrored Robots Demo</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -35,18 +35,34 @@
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>FEM</h1>
+										<h1>Mirrored Robots Demo</h1>
 									</header>
 									<h2>Overview</h2>
-									<p>In MECHENG 5139 (Finite Element Method, FEM), one of my individual projects involved analyzing the effects of slamming maple and steel cellos. The back face of the cello was designed in SolidWorks, the structural analyses were done in ANSYS, and calculations were verified with Matlab.</p>
-									<div class="content">
-										<header class="major">
-											<h2>Report</h2>
-										</header>
-										<object data="files/HudakJessica-FEM.pdf" type="application/pdf" title ="PDF" width="100%" height="500px"></object>	
-									</div> 			
+									<p>In 2022, the release of ForgeOS 5.2.0 introduced a new app: Rule Engine. This app opened the door for running logic in the background of any programmed tasks. I did extensive testing on this new feature, both to test for bugs and to gain a thorough understanding of how the app works so that I could accurately update the ForgeOS user manual. While pushing Rule Engine to its limits, I set up the unconventional scenario of having one robot “mirror” a hand-guided robot.</p>
+									<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6962891752563240960" height="655" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+									<p></p>
+									<p><a href="https://www.linkedin.com/posts/jcsugrue_robots-automation-manufacturing-activity-6962891763795587072-pchL/?utm_source=linkedin_share&utm_medium=member_desktop_web" target="_blank">Link to original post</a></p>
+									<p><a href="https://www.linkedin.com/posts/ready-robotics_robots-automation-manufacturing-activity-6962893840768798720-7jH5/?utm_source=share&utm_medium=member_desktop" target="_blank">Link to READY Robotic's repost</a></p>
+	
+									<h2>How it Works</h2>
+									<p>Two robots (a small UR3e and a large UR10e) are hooked up on the same instance of ForgeOS. Both robots use a similar coordinate system (e.g., joint coordinates of 0,0,0,0,0,0 dictates a similar configuration).</p>
+									<p>Steps:</p>
+									<p>1. In the Rule Engine app, create a linked values rule where:</p>
+									<pre><code>UR10e’s waypoint “Ur3e position” = UR3e’s parameter “Current Robot Position”
+									</code></pre>
+									<p>2. In a task, check if:</p>
+									<pre><code>UR10e's waypoint “UR3e position” = UR10e’s parameter “Current Robot Position”
+									</code></pre>
+									<ul>
+										<li>If TRUE, loop back to check again.</li>
+									</ul>
+									<ul>
+										<li>If FALSE, the UR10e does a joint move to “UR3e position”, then loop back to check again.</li>
+									</ul>
+									<p>3. Put the UR3e in HAND GUIDE mode.</p>
+									<p>4. Put the UR10e in RUN mode.</p>
+									<p>5. Start the rule and task.</p>
 								</section>
-
 						</div>
 					</div>
 
